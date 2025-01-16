@@ -1,7 +1,9 @@
 # Changelog
 
 This is an auto-generated log of all the changes that have been made to the
-project since release 0.6.0.
+project on the `seapagan/lice2` fork. That fork has now been merged into the
+`licenses/lice` project and the additional release numbers ignored. Note that
+any links in the below changelog are to the `lice2` fork and not the original.
 
 For the original changelog, please refer to the "OLD_CHANGELOG.md" file in the repository.
 
