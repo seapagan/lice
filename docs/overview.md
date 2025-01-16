@@ -106,7 +106,7 @@ You can integrate lice in your own project to generate licenses. Here is an
 example:
 
 ```python
-from lice2.api import Lice
+from lice.api import Lice
 
 lice = Lice(organization="Awesome Organization", project="Awesome Project")
 license_text = lice.get_license("mit")

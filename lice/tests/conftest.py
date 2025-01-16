@@ -1,4 +1,4 @@
-"""Setup the test configuration for the lice2 tests."""
+"""Setup the test configuration for the lice tests."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 import pytest
 
-from lice2.api import Lice
+from lice.api import Lice
 
 if TYPE_CHECKING:
     from pyfakefs.fake_filesystem import FakeFilesystem

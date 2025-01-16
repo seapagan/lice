@@ -1,14 +1,14 @@
-"""Setup configuration for lice2."""
+"""Setup configuration for lice."""
 
 from rich.console import Console
 from rich.panel import Panel
 from simple_toml_settings import TOMLSettings
 
-from lice2.constants import LICENSES
+from lice.constants import LICENSES
 
 
 class Settings(TOMLSettings):
-    """Settings for lice2."""
+    """Settings for lice."""
 
     default_license: str = "bsd3"
     organization: str = ""
@@ -30,8 +30,8 @@ def check_default_license() -> str:
             f"[red]Invalid default license '[b]{settings.default_license}"
             "'[/b] in the configuration file, falling back to '[b]bsd3[/b]', "
             "unless specified otherwise on the command line.\n\nCheck that [b]"
-            f"{settings.get_settings_folder()/settings.settings_file_name}[/b]'"
-            " has a valid value for [b]'default_license'[/b]."
+            f"'{settings.get_settings_folder() / settings.settings_file_name}"
+            f"[/b]' has a valid value for [b]'default_license'[/b]."
         )
         panel = Panel(
             error_text,

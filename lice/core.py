@@ -11,10 +11,10 @@ import typer
 from rich import print as rprint
 from rich.markup import escape
 
-from lice2 import __version__
-from lice2.config import check_default_license, settings
-from lice2.constants import LANGS, LICENSES
-from lice2.helpers import (
+from lice import __version__
+from lice.config import check_default_license, settings
+from lice.constants import LANGS, LICENSES
+from lice.helpers import (
     copy_to_clipboard,
     format_license,
     generate_header,
@@ -92,8 +92,7 @@ def main(  # noqa: PLR0913
         "--file",
         "-f",
         help=(
-            "Name of the output source file (with -l, "
-            "extension can be omitted)"
+            "Name of the output source file (with -l, extension can be omitted)"
         ),
     ),
     *,
@@ -152,7 +151,7 @@ def main(  # noqa: PLR0913
     # deal with the '--version' flag first
     if version:
         rprint(
-            "\n[green]Lice2 - Generate license files for your projects."
+            "\n[green]Lice - Generate license files for your projects."
             f"\n[/green]Version: {__version__} "
             "\u00a9 2013-2024\n"
         )

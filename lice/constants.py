@@ -1,4 +1,4 @@
-"""Define constants for the LICE2 package."""
+"""Define constants for the LICE package."""
 
 import re
 from importlib import resources

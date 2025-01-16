@@ -1,4 +1,4 @@
-site_name: Lice2 - Generate your license files with ease
+site_name: Lice - Generate your license files with ease
 
 # default to using the material theme
 theme:
@@ -13,14 +13,14 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/seapagan/lice2
+      link: https://github.com/licenses/lice
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/gnramsay_dev
 
-copyright: © 2024 Grant Ramsay (Seapagan)
+copyright: Website © 2024-2025 Grant Ramsay (Seapagan)
 
-repo_name: lice2
-repo_url: https://github.com/seapagan/lice2
+repo_name: lice
+repo_url: https://github.com/licenses/lice
 
 # default plugins here are to minify the html, css and js plus enable the search
 # plugin. Adjust to your liking.

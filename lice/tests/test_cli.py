@@ -6,7 +6,7 @@ from pyperclip import PyperclipException
 from pytest_mock import MockerFixture
 from typer.testing import CliRunner
 
-from lice2.core import app
+from lice.core import app
 
 runner = CliRunner()
 
@@ -16,7 +16,7 @@ class TestCLI:
 
     def test_cli_list_licenses(self, mocker: MockerFixture) -> None:
         """Test the CLI list_licenses option."""
-        mock_list_licenses = mocker.patch("lice2.core.list_licenses")
+        mock_list_licenses = mocker.patch("lice.core.list_licenses")
         result = runner.invoke(app, ["--licenses"])
 
         assert result.exit_code == 0
@@ -24,7 +24,7 @@ class TestCLI:
 
     def test_cli_list_languages(self, mocker: MockerFixture) -> None:
         """Test the CLI list_licenses option."""
-        mock_list_languages = mocker.patch("lice2.core.list_languages")
+        mock_list_languages = mocker.patch("lice.core.list_languages")
         result = runner.invoke(app, ["--languages"])
 
         assert result.exit_code == 0
@@ -32,7 +32,7 @@ class TestCLI:
 
     def test_cli_generate_header(self, mocker: MockerFixture) -> None:
         """Test the CLI generate header option."""
-        mock_generate_header = mocker.patch("lice2.core.generate_header")
+        mock_generate_header = mocker.patch("lice.core.generate_header")
 
         result = runner.invoke(app, ["--header"])
 
@@ -41,7 +41,7 @@ class TestCLI:
 
     def test_cli_list_vars(self, mocker: MockerFixture) -> None:
         """Test the CLI list_vars option."""
-        mock_list_vars = mocker.patch("lice2.core.list_vars")
+        mock_list_vars = mocker.patch("lice.core.list_vars")
 
         result = runner.invoke(app, ["--vars"])
 
@@ -50,7 +50,7 @@ class TestCLI:
 
     def test_cli_template_path(self, mocker: MockerFixture) -> None:
         """Test the CLI template_path option."""
-        mock_template_path = mocker.patch("lice2.core.load_file_template")
+        mock_template_path = mocker.patch("lice.core.load_file_template")
         mock_template_path.return_value = StringIO("Mocked template content")
 
         result = runner.invoke(app, ["--template", "template.txt"])
@@ -114,7 +114,7 @@ class TestCLI:
         result = runner.invoke(app, ["--version"])
 
         assert result.exit_code == 0
-        assert "Lice2" in result.output
+        assert "Lice" in result.output
         assert "Version" in result.output
 
     def test_metadata_command(self) -> None:

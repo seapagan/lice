@@ -1,16 +1,16 @@
-"""Test suite for the programmatic API of lice2."""
+"""Test suite for the programmatic API of lice."""
 
 import pytest
 
-from lice2.api import Lice
-from lice2.api.exceptions import (
+from lice.api import Lice
+from lice.api.exceptions import (
     HeaderNotFoundError,
     InvalidYearError,
     LanguageNotFoundError,
     LicenseNotFoundError,
 )
-from lice2.constants import LANGS, LICENSES
-from lice2.helpers import get_local_year
+from lice.constants import LANGS, LICENSES
+from lice.helpers import get_local_year
 
 
 class TestAPI:

@@ -1,15 +1,15 @@
-"""This defines an API that other Python code can use to interact with LICE2."""
+"""This defines an API that other Python code can use to interact with Lice."""
 
 from __future__ import annotations
 
-from lice2.api.exceptions import (
+from lice.api.exceptions import (
     HeaderNotFoundError,
     InvalidYearError,
     LanguageNotFoundError,
     LicenseNotFoundError,
 )
-from lice2.constants import LANGS, LICENSES
-from lice2.helpers import (
+from lice.constants import LANGS, LICENSES
+from lice.helpers import (
     format_license,
     generate_license,
     get_local_year,

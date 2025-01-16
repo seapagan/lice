@@ -17,11 +17,11 @@ If the latest full release does not help, try the latest alpha or beta version
 ## Reporting a Vulnerability
 
 If you find a security vulnerability in this code, [please open an
-Issue](https://github.com/seapagan/lice2/issues) and report it.
+Issue](https://github.com/licenses/lice/issues) and report it.
 It may be already known to us and we may be working on a fix. If not, we will
 work with you to understand the issue and fix it. Generally we would annouce any
 known vulnerability in the
-[Discussions](https://github.com/seapagan/lice2/discussions)
+[Discussions](https://github.com/licenses/lice/discussions)
 forum.
 
 We use **Dependabot** for security updates and dependency management. If a

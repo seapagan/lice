@@ -1,8 +1,11 @@
 [project]
-name = "lice2"
+name = "lice"
 version = "0.13.0"
 description = "Generate license files for your projects"
-authors = [{ name = "Grant Ramsay", email = "grant@gnramsay.com" }]
+authors = [
+  { name = "Jeremy Carbaugh", email = "jcarbaugh@gmail.com" },
+  { name = "Grant Ramsay", email = "grant@gnramsay.com" },
+]
 license = "BSD-3-Clause"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -27,14 +30,14 @@ dependencies = [
 ]
 
 [project.urls]
-"repository" = "https://github.com/seapagan/lice2"
-"homepage" = "https://seapagan.github.io/lice2/"
-"Pull Requests" = "https://github.com/seapagan/lice2/pulls"
-"Bug Tracker" = "https://github.com/seapagan/lice2/issues"
-"Changelog" = "https://github.com/seapagan/lice2/blob/main/CHANGELOG.md"
+"repository" = "https://github.com/licenses/lice"
+# "homepage" = "https://seapagan.github.io/lice2/"
+"Pull Requests" = "https://github.com/licenses/lice/pulls"
+"Bug Tracker" = "https://github.com/licenses/lice/issues"
+"Changelog" = "https://github.com/licenses/lice/blob/main/CHANGELOG.md"
 
 [project.scripts]
-lice = "lice2.core:app"
+lice = "lice.core:app"
 
 [tool.uv]
 dev-dependencies = [
@@ -96,15 +99,13 @@ filterwarnings = [
 mock_use_standalone_module = true
 
 [tool.coverage.run]
-source = ["lice2"]
+source = ["lice"]
 omit = ["*/tests/*"]
 
 [tool.ruff]
 line-length = 80
 lint.select = ["ALL"] # we are being very strict!
 lint.ignore = [
-  "ANN101",
-  "ANN102",
   "PGH003",
   "FBT002",
   "FBT003",
@@ -115,7 +116,7 @@ lint.extend-ignore = [
   "ISC001",
 ] # these are ignored for ruff formatting
 
-src = ["lice2"]
+src = ["lice"]
 target-version = "py39" # minimum python version supported
 
 [tool.ruff.format]
@@ -129,14 +130,14 @@ classmethod-decorators = ["pydantic.validator", "pydantic.root_validator"]
 convention = "google"
 
 [tool.ruff.lint.extend-per-file-ignores]
-"lice2/tests/**/*.py" = [
+"lice/tests/**/*.py" = [
   "S101",   # we can (and MUST!) use 'assert' in test files.
   "ANN001", # annotations for fixtures are sometimes a pain for test files
   "ARG00",  # test fixtures often are not directly used
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["lice2"]
+known-first-party = ["lice"]
 
 [tool.ruff.lint.pyupgrade]
 keep-runtime-typing = true

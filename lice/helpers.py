@@ -1,4 +1,4 @@
-"""Helper functions for LICE2."""
+"""Helper functions for lice."""
 
 import getpass
 import json
@@ -19,8 +19,8 @@ from rich.console import Console
 from rich.table import Table
 from rich.text import Text
 
-from lice2.config import settings
-from lice2.constants import LANG_CMT, LANGS, LICENSES
+from lice.config import settings
+from lice.constants import LANG_CMT, LANGS, LICENSES
 
 
 def clean_path(p: str) -> str:
@@ -66,7 +66,7 @@ def get_lang(args: SimpleNamespace) -> str:
             "I do not know about a language ending with "
             f"extension '{lang}'.\n"
             "Please send a pull request adding this language to\n"
-            "https://github.com/seapagan/lice2. Thanks!\n"
+            "https://github.com/licenses/lice. Thanks!\n"
         )
         raise typer.Exit(1)
     return lang
@@ -288,8 +288,7 @@ def generate_header(args: SimpleNamespace, lang: str) -> None:
             template = load_package_template(args.license, header=True)
         except OSError:
             sys.stderr.write(
-                "Sorry, no source headers are available for "
-                f"{args.license}.\n"
+                f"Sorry, no source headers are available for {args.license}.\n"
             )
             raise typer.Exit(1) from None
 

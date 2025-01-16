@@ -1,12 +1,12 @@
-# Integrating 'Lice2' in your own project
+# Integrating 'Lice' in your own project
 
 ## Overview
 
-Starting version `0.12.0`, you can use `Lice2` as an API in your own project to
+Starting version `0.12.0`, you can use `Lice` as an API in your own project to
 generate licenses. Here is an example:
 
 ```python
-from lice2.api import Lice
+from lice.api import Lice
 
 lice = Lice(organization="Awesome Organization", project="Awesome Project")
 license_text = lice.get_license("mit")
@@ -18,10 +18,10 @@ replaced with the values you provided, using the current year as the default.
 
 ## Construct a Lice object
 
-To use `lice2` in your own project, you first need to construct a `Lice` object.
+To use `lice` in your own project, you first need to construct a `Lice` object.
 
 ```python
-from lice2.api import Lice
+from lice.api import Lice
 
 lice = Lice(organization="Awesome Organization", project="Awesome Project")
 ```
@@ -34,7 +34,7 @@ You can also pass a year to the constructor if you want to use a different year
 for any reason (can be useful for testing). This can be an integer or a string.
 
 ```python
-from lice2.api import Lice
+from lice.api import Lice
 
 lice = Lice(
   organization="Awesome Organization",
@@ -68,7 +68,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 ```
 
 If you provide an invalid license name, the method will raise a
-`lice2.exceptions.LicenseNotFoundError` exception.
+`lice.exceptions.LicenseNotFoundError` exception.
 
 You can pass an optional `language` argument to the method to generate the
 license text as a commented block in the specified language. This can be useful
@@ -91,7 +91,7 @@ print(license_text)
 ```
 
 If you provide an invalid language name, the method will raise a
-`lice2.exceptions.LanguageNotFoundError` exception.
+`lice.exceptions.LanguageNotFoundError` exception.
 
 ### `get_header`
 
@@ -102,7 +102,7 @@ If the language is specified, the header will be formatted as a commented block
 for that language. If not, the header will be returned as a plain text block.
 
 Note: Not all licenses have headers, if the license does not have a header, this
-method will raise a `lice2.exceptions.HeaderNotFoundError` exception.
+method will raise a `lice.exceptions.HeaderNotFoundError` exception.
 
 ```python
 header_text = lice.get_header("gpl3")
@@ -110,7 +110,7 @@ print(header_text)
 ```
 
 ```pre
-lice2
+lice
 Copyright (C) 2024  Grant Ramsay
 
 This program is free software: you can redistribute it and/or modify
@@ -128,7 +128,7 @@ print(header_text)
 ```
 
 ```pre
-# lice2
+# lice
 # Copyright (C) 2024  Grant Ramsay
 #
 # This program is free software: you can redistribute it and/or modify
@@ -173,13 +173,13 @@ print(languages)
 ## Exceptions
 
 There are several exceptions that can be raised by the API methods. These are
-all subclasses of `lice2.exceptions.LiceError`, and should be caught and
+all subclasses of `lice.exceptions.LiceError`, and should be caught and
 handled.
 
-They can be imported from the `lice2.exceptions` module.
+They can be imported from the `lice.exceptions` module.
 
 ```python
-from lice2.exceptions import LicenseNotFoundError
+from lice.exceptions import LicenseNotFoundError
 ```
 
 You can get the offending attribute value by appending it to the `value`

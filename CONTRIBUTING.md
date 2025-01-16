@@ -1,11 +1,11 @@
 
-# Contributing to Lice2 <!-- omit in toc -->
+# Contributing to  <!-- omit in toc -->
 
-Thank you for your interest in contributing to Lice2! We welcome
+Thank you for your interest in contributing to Lice! We welcome
 all contributions, big or small.
 
 If you are not sure where to start, please take a look at the [open
-issues](https://github.com/seapagan/lice2/issues). If you have an
+issues](https://github.com/licenses/lice/issues). If you have an
 idea for a new feature or would like to report a bug, please open a new issue.
 
 We also welcome contributions to the documentation. If you find any errors or
@@ -48,8 +48,8 @@ If you already have a Python version installed, uv will use this.
 
 Before you start contributing, please make sure you have read and understood our
 [Code of
-Conduct](https://github.com/seapagan/lice2/blob/main/CODE_OF_CONDUCT.md) and
-[License](https://github.com/seapagan/lice2/blob/main/LICENSE).
+Conduct](https://github.com/licenses/lice/blob/main/CODE_OF_CONDUCT.md) and
+[License](https://github.com/licenses/lice/blob/main/LICENSE).
 
 To get started, follow these steps:
 
@@ -183,7 +183,7 @@ These are to help with developing and updating the documentation.
 
 ## Guidelines
 
-Here are some guidelines to follow when contributing to Lice2:
+Here are some guidelines to follow when contributing to Lice:
 
 - Do not update the version number in the `pyproject.toml` file. This will be
   done by the maintainers when a new release is made.
@@ -201,14 +201,14 @@ Here are some guidelines to follow when contributing to Lice2:
 - Make sure your code passes all tests before submitting a pull request.
 - Document your code using
   [docstrings](https://www.python.org/dev/peps/pep-0257/).
-- Use [GitHub issues](https://github.com/seapagan/lice2/issues)
+- Use [GitHub issues](https://github.com/licenses/lice/issues)
   to report bugs or suggest new features.
 
 ## Contact
 
 If you have any questions or need help with contributing, please contact me
 **@seapagan** on GitHub. You can also use the [GitHub
-Discussions](https://github.com/seapagan/lice2/discussions)
+Discussions](https://github.com/licenses/lice/discussions)
 feature.
 
 Happy contributing!

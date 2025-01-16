@@ -14,10 +14,10 @@ from pyfakefs.fake_filesystem import FakeFilesystem
 from pyperclip import PyperclipException
 from pytest_mock import MockerFixture
 
-import lice2
-from lice2.config import check_default_license
-from lice2.constants import LANGS, LICENSES
-from lice2.helpers import (
+import lice
+from lice.config import check_default_license
+from lice.constants import LANGS, LICENSES
+from lice.helpers import (
     clean_path,
     extract_vars,
     format_license,
@@ -36,13 +36,13 @@ from lice2.helpers import (
     validate_license,
     validate_year,
 )
-from lice2.tests.conftest import TEMPLATE_FILE
+from lice.tests.conftest import TEMPLATE_FILE
 
-TEMPLATE_PATH = Path(lice2.__file__).parent / "templates"
+TEMPLATE_PATH = Path(lice.__file__).parent / "templates"
 
 
 class TestLice:
-    """Test the lice2 module functionality."""
+    """Test the lice module functionality."""
 
     def test_paths(self) -> None:
         """Test the 'clean_path' function."""
@@ -258,7 +258,7 @@ class TestLice:
 
         In this case, we should see the name but not the value.
         """
-        mock_context = mocker.patch("lice2.helpers.get_context")
+        mock_context = mocker.patch("lice.helpers.get_context")
         mock_context.return_value = {"year": "2024"}
         with pytest.raises(typer.Exit) as exc:
             list_vars(args, "mit")
@@ -451,7 +451,7 @@ class TestLice:
 
         Testing when the organization is read from the config file.
         """
-        mocker.patch("lice2.helpers.settings.organization", "Awesome Co.")
+        mocker.patch("lice.helpers.settings.organization", "Awesome Co.")
         result = guess_organization()
         assert result == "Awesome Co."
 
@@ -461,7 +461,7 @@ class TestLice:
         Testing when the organization is read from git.
         """
         # Mock the settings.organization to be None or empty
-        mocker.patch("lice2.helpers.settings", organization=None)
+        mocker.patch("lice.helpers.settings", organization=None)
 
         # Mock subprocess.check_output to return a specific git user.name
         mock_subprocess = mocker.patch("subprocess.check_output")
@@ -480,7 +480,7 @@ class TestLice:
         variable.
         """
         # Mock the settings.organization to be None or empty
-        mocker.patch("lice2.helpers.settings", organization=None)
+        mocker.patch("lice.helpers.settings", organization=None)
 
         # Mock subprocess.check_output to raise a CalledProcessError
         mock_subprocess = mocker.patch("subprocess.check_output")
@@ -506,7 +506,7 @@ class TestLice:
         It should return bsd3 instead, and not raise an exception.
         It should also print a warning message.
         """
-        mocker.patch("lice2.config.settings", default_license="bad")
+        mocker.patch("lice.config.settings", default_license="bad")
 
         result = check_default_license()
 
